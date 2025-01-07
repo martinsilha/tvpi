@@ -32,7 +32,23 @@ section_title() {
 console_message() {
     local color="$1"
     local message="$2"
-    echo -e "${color}$message${RESET}"
+    echo -e "::: ${color}$message${RESET}"
+}
+
+console_error() {
+    console_message "$RED" "$1"
+}
+
+console_warning() {
+    console_message "$YELLOW" "$1"
+}
+
+console_info() {
+    console_message "$BRIGHT_BLUE" "$1"
+}
+
+console_success() {
+    console_message "$BRIGHT_GREEN" "$1"
 }
 
 # Function to send a Slack message

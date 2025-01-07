@@ -13,11 +13,11 @@ bash "$(dirname "$0")/config_firewall.sh"
 
 # Setup slideshow and health check
 section_title "$TITLE_COLOR" "CRON and Startup"
-console_message "$BRIGHT_YELLOW" "Setup Slideshow"
+console_info "Setup Slideshow"
 bash "$(dirname "$0")/setup_slideshow.sh"
-console_message "$BRIGHT_YELLOW" "Setup Health Check"
+console_info "Setup Health Check"
 bash "$(dirname "$0")/health_check.sh"
 
 # Reboot to apply changes
-console_message "$GREEN" "Setup complete! Rebooting..."
+console_success "Setup complete! Rebooting..."
 # sudo reboot
