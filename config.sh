@@ -9,4 +9,4 @@ SLACK_CHANNEL_ERROR="#error-all"
 SLACK_USERNAME="tvpi"
 
 # Source common functions
-source /home/herb/scripts/tvpi-install/lib.sh
+source /home/herb/scripts/tvpi/lib.sh
