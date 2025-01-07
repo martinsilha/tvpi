@@ -11,4 +11,4 @@ SLACK_CHANNEL_ERROR="#error-all"
 SLACK_USERNAME="tvpi"
 
 # Source common functions
-source ~/scripts/tvpi/lib.sh
+source ./lib.sh
