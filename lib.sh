@@ -23,8 +23,12 @@ TITLE_COLOR=$BRIGHT_CYAN
 
 # Function to print section title
 section_title() {
-    local color="$1"
-    local message="$2"
+    local color="$TITLE_COLOR"
+    local message="$1"
+    if [[ "$1" =~ ^\\033 ]]; then
+        color="$1"
+        message="$2"
+    fi
     echo -e "\n${color}==== $message ====${RESET}\n"
 }
 
