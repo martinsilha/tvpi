@@ -14,3 +14,8 @@ else
     }
     sudo usermod -aG video,tty $SLIDESHOW_USER
 fi
+
+console_info "Setting up directories..."
+sudo mkdir -p "$IMAGE_DIR"
+sudo mkdir -p "$SLIDESHOW_DIR"
+sudo chown -R $SLIDESHOW_USER:$SLIDESHOW_USER "$BASE_DIR"
