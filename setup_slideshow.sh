@@ -19,7 +19,7 @@ console_info "Creating slideshow script..."
 sudo bash -c "cat <<EOF > $SLIDESHOW_DIR/start_slideshow.sh
 #!/bin/bash
 while true; do
-    sudo fbi -T $ACTIVE_CONSOLE -a -t $SLIDESHOW_DELAY -noverbose -readahead $IMAGE_DIR/* --blend 60000
+    sudo fbi -d /dev/fb0 -T $ACTIVE_CONSOLE -a -t $SLIDESHOW_DELAY -noverbose -readahead $IMAGE_DIR/* --blend 60000
 done
 EOF"
 sudo chmod +x $SLIDESHOW_DIR/start_slideshow.sh
