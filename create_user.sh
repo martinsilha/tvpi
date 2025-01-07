@@ -2,9 +2,9 @@
 source "$(dirname "$0")/config.sh"
 source "$(dirname "$0")/lib.sh"
 
-section_title "$YELLOW" "Creating Slideshow User"
+section_title "$TITLE_COLOR" "Create Slideshow User"
 
-console_message "$GREEN" "Creating slideshow user..."
+console_message "$YELLOW" "Creating slideshow user..."
 if id "$SLIDESHOW_USER" &>/dev/null; then
     console_message "$GREEN" "User $SLIDESHOW_USER already exists."
 else

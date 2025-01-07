@@ -1,5 +1,5 @@
 #!/bin/bash
-section_title "$YELLOW" "Installing Required Packages"
+section_title "$TITLE_COLOR" "Installing Required Packages"
 
 console_message "$GREEN" "Installing required packages..."
 sudo apt update && sudo apt install -y feh lightdm xorg || {

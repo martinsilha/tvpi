@@ -1,10 +1,6 @@
 #!/bin/bash
-# Ensure the following commands can be run without a password by configuring sudoers:
-# sudo visudo
-# Add the following lines:
-# %sudo ALL=(ALL) NOPASSWD: /bin/mkdir, /bin/chown
-
 source "$(dirname "$0")/config.sh"
+source "$(dirname "$0")/lib.sh"
 
 console_message "$BLUE" "Setting up slideshow directory..."
 sudo mkdir -p "$SLIDESHOW_DIR"

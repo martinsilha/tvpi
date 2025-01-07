@@ -1,4 +1,5 @@
 #!/bin/bash
+section_title "$TITLE_COLOR" "Configure LightDM"
 source "$(dirname "$0")/config.sh"
 
 echo "Configuring LightDM for auto-login..."
