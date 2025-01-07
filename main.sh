@@ -8,7 +8,6 @@ trap 'echo "Error occurred. Exiting." && exit 1' ERR
 # Execute subscripts
 bash "$(dirname "$0")/create_user.sh"
 bash "$(dirname "$0")/install_packages.sh"
-# bash "$(dirname "$0")/config_lightdm.sh"
 bash "$(dirname "$0")/config_firewall.sh"
 
 # Setup slideshow and health check
