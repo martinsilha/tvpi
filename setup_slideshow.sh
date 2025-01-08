@@ -3,7 +3,7 @@ source "$(dirname "$0")/config.sh"
 source "$(dirname "$0")/lib.sh"
 
 # Determine the active console
-ACTIVE_CONSOLE=$(fgconsole)
+ACTIVE_CONSOLE=$(fgconsole || tty)
 
 # Verify if the console number is valid
 if [[ -z "$ACTIVE_CONSOLE" || "$ACTIVE_CONSOLE" -lt 1 ]]; then
