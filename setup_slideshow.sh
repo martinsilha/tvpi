@@ -11,7 +11,7 @@ fi
 
 console_info "Setting up slideshow directory..."
 mkdir -p "$SLIDESHOW_DIR"
-chown -R $USER:$USER "$SLIDESHOW_DIR"
+sudo chown -R $USER:$USER "$SLIDESHOW_DIR"
 
 console_info "Creating slideshow script..."
 bash -c "cat <<EOF > $SLIDESHOW_DIR/start_slideshow.sh
