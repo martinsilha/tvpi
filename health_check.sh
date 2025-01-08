@@ -12,7 +12,7 @@ curl -X POST -H 'Content-type: application/json' --data \"{
 }\" $SLACK_WEBHOOK_URL
 EOF"
 console_info "Setting permissions and adding to crontab..."
-sudo chmod +x /home/$SLIDESHOW_USER/health_check.sh
+sudo chmod +x $SLIDESHOW_DIR/health_check.sh
 
 # Check if the cron job already exists
 if ! sudo crontab -u $SLIDESHOW_USER -l 2>/dev/null | grep -q "$SLIDESHOW_DIR/health_check.sh"; then
