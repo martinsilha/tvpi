@@ -78,5 +78,5 @@ create_script() {
     else
         console_error "Failed to create the file: $filepath"
         exit 1
-    }
+    fi
 }
