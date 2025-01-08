@@ -8,4 +8,4 @@ SLIDESHOW_DIR="$BASE_DIR/slideshow"
 SLIDESHOW_DELAY=120  # Delay in seconds for fbi
 
 # Source common functions
-source ./lib.sh
+source "$(dirname "$0")/lib.sh"
