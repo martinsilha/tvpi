@@ -6,9 +6,9 @@ source "$(dirname "$0")/lib.sh"
 trap 'echo "Error occurred. Exiting." && exit 1' ERR
 
 # Execute subscripts
-mkdir -p "$IMAGE_DIR"
-mkdir -p "$SLIDESHOW_DIR"
-chown -R $USER:$USER "$BASE_DIR"
+# mkdir -p "$IMAGE_DIR"
+# mkdir -p "$SLIDESHOW_DIR"
+# chown -R $USER:$USER "$BASE_DIR"
 
 # bash "$(dirname "$0")/create_user.sh"  # Now only sets up directories
 bash "$(dirname "$0")/install_packages.sh"
