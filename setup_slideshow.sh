@@ -13,6 +13,12 @@ console_info "Setting up slideshow directory..."
 sudo mkdir -p "$SLIDESHOW_DIR"
 sudo chown -R $SLIDESHOW_USER:$SLIDESHOW_USER "$SLIDESHOW_DIR"
 
+console_info "Setting up image directory..."
+sudo mkdir -p "$IMAGE_DIR"
+curl -o "$IMAGE_DIR/1.jpg" "https://picsum.photos/1920/1080"
+curl -o "$IMAGE_DIR/2.jpg" "https://picsum.photos/1920/1080"
+curl -o "$IMAGE_DIR/3.jpg" "https://picsum.photos/1920/1080"
+
 console_info "Creating slideshow script..."
 create_script "$SLIDESHOW_DIR/start_slideshow.sh" "#!/bin/bash
 sudo fbi -d /dev/fb0 -T 1 -a -t $SLIDESHOW_DELAY --noverbose --readahead $IMAGE_DIR/*.{jpg,jpeg,webp} 2>/dev/null"
