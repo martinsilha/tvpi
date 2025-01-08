@@ -21,6 +21,4 @@ bash "$(dirname "$0")/setup_slideshow.sh"
 console_info "Setup Health Check"
 bash "$(dirname "$0")/cron_health_check.sh"
 
-# Reboot to apply changes
-console_success "Setup complete! Rebooting..."
-# sudo reboot
+console_success "Setup complete!"
