@@ -3,7 +3,7 @@ source "$(dirname "$0")/config.sh"
 
 section_title "Setup Health Check"
 console_info "Creating health check script..."
-sudo bash -c "cat <<EOF > $SLIDESHOW_DIR/$health_check.sh
+sudo bash -c "cat <<EOF > $SLIDESHOW_DIR/health_check.sh
 #!/bin/bash
 curl -X POST -H 'Content-type: application/json' --data \"{
     \\\"channel\\\": \\\"$SLACK_CHANNEL_ERROR\\\",
