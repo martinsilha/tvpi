@@ -5,11 +5,7 @@ section_title "Setup Health Check"
 console_info "Creating health check script..."
 sudo bash -c "cat <<EOF > $SLIDESHOW_DIR/health_check.sh
 #!/bin/bash
-curl -X POST -H 'Content-type: application/json' --data \"{
-    \\\"channel\\\": \\\"$SLACK_CHANNEL_ERROR\\\",
-    \\\"username\\\": \\\"$SLACK_USERNAME\\\",
-    \\\"text\\\": \\\"Health check: System is running.\\\"
-}\" $SLACK_WEBHOOK_URL
+echo \"Health check: System is running.\"
 EOF"
 console_info "Setting permissions and adding to crontab..."
 sudo chmod +x $SLIDESHOW_DIR/health_check.sh
