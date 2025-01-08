@@ -30,10 +30,11 @@ Description=Slideshow Service
 After=network.target
 
 [Service]
-ExecStart=$SLIDESHOW_DIR/start_slideshow.sh
+ExecStart=/bin/bash $SLIDESHOW_DIR/start_slideshow.sh
+Restart=always
 User=$SLIDESHOW_USER
 Group=$SLIDESHOW_USER
-Restart=always
+
 
 [Install]
 WantedBy=multi-user.target
