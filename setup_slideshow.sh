@@ -10,8 +10,8 @@ else
 fi
 
 console_info "Setting up slideshow directory..."
-mkdir -p "$SLIDESHOW_DIR"
-chown -R $SLIDESHOW_USER:$SLIDESHOW_USER "$SLIDESHOW_DIR"
+sudo mkdir -p "$SLIDESHOW_DIR"
+sudo chown -R $SLIDESHOW_USER:$SLIDESHOW_USER "$SLIDESHOW_DIR"
 
 console_info "Creating slideshow script..."
 create_script "$SLIDESHOW_DIR/start_slideshow.sh" "#!/bin/bash
