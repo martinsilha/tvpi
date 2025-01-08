@@ -8,7 +8,7 @@ create_script "$SLIDESHOW_DIR/health_check.sh" "#!/bin/bash
 echo \"Health check: System is running.\""
 
 console_info "Setting permissions and adding to crontab..."
-chmod +x $SLIDESHOW_DIR/health_check.sh
+sudo chmod +x $SLIDESHOW_DIR/health_check.sh
 
 # Check if the cron job already exists
 if ! crontab -l 2>/dev/null | grep -q "$SLIDESHOW_DIR/health_check.sh"; then
