@@ -40,6 +40,8 @@ ProtectHome=yes
 KillMode=process
 StandardInput=tty
 StandardOutput=tty
+TimeoutStartSec=0
+TimeoutStopSec=0
 Restart=always
 
 
