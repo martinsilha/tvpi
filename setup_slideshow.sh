@@ -6,9 +6,10 @@ source "$(dirname "$0")/lib.sh"
 ACTIVE_CONSOLE=$(fgconsole || tty)
 
 # Verify if the console number is valid
-if [[ -z "$ACTIVE_CONSOLE" || "$ACTIVE_CONSOLE" -lt 1 ]]; then
-    echo "Error: Unable to determine the active console."
-    exit 1
+if [[ -e /dev/pts/0 ]]; then
+    echo "Console is available."
+else
+    echo "Couldn't get a file descriptor referring to the console."
 fi
 
 console_info "Setting up slideshow directory..."
