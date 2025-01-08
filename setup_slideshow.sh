@@ -30,6 +30,7 @@ Description=Slideshow Service
 After=network.target
 
 [Service]
+ExecStartPre=/bin/sleep 30
 ExecStart=/bin/bash $SLIDESHOW_DIR/start_slideshow.sh
 Restart=always
 User=$SLIDESHOW_USER
