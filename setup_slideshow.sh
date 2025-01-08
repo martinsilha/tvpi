@@ -32,9 +32,13 @@ After=network.target
 [Service]
 ExecStartPre=/bin/sleep 30
 ExecStart=/bin/bash $SLIDESHOW_DIR/start_slideshow.sh
-Restart=always
+Environment="DISPLAY=:0"
+Environment="XDG_RUNTIME_DIR=/run/user/1000"
 User=$SLIDESHOW_USER
-Group=$SLIDESHOW_USER
+Group=video
+StandardInput=tty
+StandardOutput=tty
+Restart=always
 
 
 [Install]
