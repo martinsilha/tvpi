@@ -17,8 +17,8 @@ The configuration variables are defined in the `config.sh` file. You can modify 
 
 ## Scripts
 
-- `create_user.sh`: Creates the slideshow user and sets up directories.
+- `create_user.sh`: Sets up directories.
 - `install_packages.sh`: Installs the required packages.
 - `config_firewall.sh`: Configures the firewall.
 - `setup_slideshow.sh`: Sets up the slideshow script.
-- `health_check.sh`: Sets up a health check script and cron job.
+- `cron_health_check.sh`: Sets up a health check script and cron job.
