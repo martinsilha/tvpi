@@ -55,32 +55,11 @@ console_success() {
     console_message "$BRIGHT_GREEN" "$1"
 }
 
-# Function to send a Slack message
-send_slack_message() {
-    local channel="$1"
-    local message="$2"
-    local hostname=$(hostname)
-    local timestamp=$(date)
-    curl -X POST -H 'Content-type: application/json' --data "{
-        \"channel\": \"$channel\",
-        \"username\": \"$SLACK_USERNAME\",
-        \"text\": \"[$timestamp] [$hostname] $message\"
-    }" $SLACK_WEBHOOK_URL
-}
-
-# Function to handle errors
-error_handler() {
-    local exit_code=$?
-    local command="${BASH_COMMAND}"
-    send_slack_message "$SLACK_CHANNEL_ERROR" "Error during execution of command: \"$command\" with exit code $exit_code."
-    exit $exit_code
-}
-
 # Function to ensure a directory exists
 ensure_directory() {
     local dir="$1"
     mkdir -p "$dir" || {
-        send_slack_message "$SLACK_CHANNEL_ERROR" "Failed to create directory: $dir."
+        console_error "Failed to create directory: $dir."
         exit 1
     }
 }
@@ -93,12 +72,11 @@ create_script() {
     if [ -f "$filepath" ]; then
         console_message "File created: $filepath"
         sudo chmod +x "$filepath" || {
-            send_slack_message "$SLACK_CHANNEL_ERROR" "Failed to configure script: $filepath."
+            console_error "Failed to configure script: $filepath."
             exit 1
         }
     else
         console_message "${RED}Failed to create the file: $filepath${NC}"
-        send_slack_message "$SLACK_CHANNEL_ERROR" "Failed to create the file $filepath."
         exit 1
     fi
 }
