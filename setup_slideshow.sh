@@ -15,9 +15,9 @@ sudo chown -R $SLIDESHOW_USER:$SLIDESHOW_USER "$SLIDESHOW_DIR"
 
 console_info "Setting up image directory..."
 sudo mkdir -p "$IMAGE_DIR"
-curl -o "$IMAGE_DIR/1.jpg" "https://picsum.photos/1920/1080"
-curl -o "$IMAGE_DIR/2.jpg" "https://picsum.photos/1920/1080"
-curl -o "$IMAGE_DIR/3.jpg" "https://picsum.photos/1920/1080"
+curl -o "$IMAGE_DIR/1.jpg" "https://placehold.co/600x400/EEE/31343C.jpg"
+curl -o "$IMAGE_DIR/2.jpg" "https://placehold.co/600x400/EEE/31343C.jpg"
+curl -o "$IMAGE_DIR/3.jpg" "https://placehold.co/600x400/EEE/31343C.jpg"
 
 console_info "Creating slideshow script..."
 create_script "$SLIDESHOW_DIR/start_slideshow.sh" "#!/bin/bash
