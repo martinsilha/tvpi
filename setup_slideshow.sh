@@ -18,7 +18,7 @@ create_script "$SLIDESHOW_DIR/start_slideshow.sh" "#!/bin/bash
 sudo fbi -d /dev/fb0 -T 1 -a -t $SLIDESHOW_DELAY --noverbose --readahead $IMAGE_DIR/*.{jpg,jpeg,webp} 2>/dev/null"
 
 console_info "Creating systemd service for slideshow..."
-sudo bash -c 'cat > /etc/systemd/system/slideshow.service <<EOF
+sudo bash -c "cat > /etc/systemd/system/slideshow.service <<EOF
 [Unit]
 Description=Slideshow Service
 After=network.target
@@ -31,7 +31,7 @@ Restart=always
 
 [Install]
 WantedBy=multi-user.target
-EOF'
+EOF"
 
 console_info "Enabling and starting slideshow service..."
 sudo systemctl enable slideshow.service
