@@ -10,12 +10,6 @@ EOF"
 console_info "Setting permissions and adding to crontab..."
 sudo chmod +x $SLIDESHOW_DIR/health_check.sh
 
-# Ensure SLIDESHOW_USER is set
-if [ -z "$SLIDESHOW_USER" ]; then
-    console_error "SLIDESHOW_USER is not set. Exiting."
-    exit 1
-fi
-
 # Check if the cron job already exists
 if ! crontab -l 2>/dev/null | grep -q "$SLIDESHOW_DIR/health_check.sh"; then
     (crontab -l 2>/dev/null; echo "0 * * * * $SLIDESHOW_DIR/health_check.sh") | crontab -
