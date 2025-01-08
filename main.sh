@@ -7,7 +7,7 @@ trap 'echo "Error occurred. Exiting." && exit 1' ERR
 
 # Execute subscripts
 bash "$(dirname "$0")/install_packages.sh"
-bash "$(dirname "$0")/config_firewall.sh"
+# bash "$(dirname "$0")/config_firewall.sh"
 
 # Setup slideshow and health check
 section_title "CRON and Startup"
