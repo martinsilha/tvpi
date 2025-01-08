@@ -35,7 +35,9 @@ ExecStart=/bin/bash $SLIDESHOW_DIR/start_slideshow.sh
 Environment="DISPLAY=:0"
 Environment="XDG_RUNTIME_DIR=/run/user/1000"
 User=$SLIDESHOW_USER
-Group=video
+ProtectSystem=full
+ProtectHome=yes
+KillMode=process
 StandardInput=tty
 StandardOutput=tty
 Restart=always
