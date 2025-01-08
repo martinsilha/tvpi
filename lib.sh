@@ -68,10 +68,10 @@ ensure_directory() {
 create_script() {
     local filepath="$1"
     local content="$2"
-    echo "$content" > "$filepath"
+    sudo echo "$content" > "$filepath"
     if [ -f "$filepath" ]; then
         console_message "$BRIGHT_GREEN" "File created: $filepath"
-        chmod +x "$filepath" || {
+        sudo chmod +x "$filepath" || {
             console_error "Failed to configure script: $filepath."
             exit 1
         }
@@ -80,3 +80,9 @@ create_script() {
         exit 1
     fi
 }
+
+# Change ownership of the health check script
+# sudo chown root:root ~/slideshow/health_check.sh
+
+# Change permissions of the health check script
+sudo chmod +x ~/slideshow/health_check.sh
