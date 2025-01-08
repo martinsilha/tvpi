@@ -70,13 +70,13 @@ create_script() {
     local content="$2"
     echo "$content" > "$filepath"
     if [ -f "$filepath" ]; then
-        console_message "File created: $filepath"
-        sudo chmod +x "$filepath" || {
+        console_message "$BRIGHT_GREEN" "File created: $filepath"
+        chmod +x "$filepath" || {
             console_error "Failed to configure script: $filepath."
             exit 1
         }
     else
-        console_message "${RED}Failed to create the file: $filepath${NC}"
+        console_error "Failed to create the file: $filepath"
         exit 1
-    fi
+    }
 }
