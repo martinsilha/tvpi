@@ -27,7 +27,8 @@ console_info "Creating systemd service for slideshow..."
 sudo bash -c "cat > /etc/systemd/system/slideshow.service <<EOF
 [Unit]
 Description=Slideshow Service
-After=network.target
+After=display-manager.service
+Requires=display-manager.service
 
 [Service]
 ExecStartPre=/bin/sleep 30
@@ -46,7 +47,7 @@ Restart=always
 
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=graphical.target
 EOF"
 
 console_info "Enabling and starting slideshow service..."
