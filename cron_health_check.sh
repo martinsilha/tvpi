@@ -4,10 +4,9 @@ source "$(dirname "$0")/lib.sh"
 
 section_title "Setup Health Check"
 console_info "Creating health check script..."
-bash -c "cat <<EOF > $SLIDESHOW_DIR/health_check.sh
-#!/bin/bash
-echo \"Health check: System is running.\"
-EOF"
+create_script "$SLIDESHOW_DIR/health_check.sh" "#!/bin/bash
+echo \"Health check: System is running.\""
+
 console_info "Setting permissions and adding to crontab..."
 chmod +x $SLIDESHOW_DIR/health_check.sh
 
