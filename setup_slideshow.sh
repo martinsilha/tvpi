@@ -44,6 +44,9 @@ StandardOutput=tty
 TimeoutStartSec=0
 TimeoutStopSec=0
 Restart=always
+RestartSec=10
+StartLimitBurst=5
+StartLimitIntervalSec=60
 
 
 [Install]
