@@ -31,7 +31,6 @@ After=display-manager.service
 Requires=display-manager.service
 
 [Service]
-ExecStartPre=/bin/sleep 30
 ExecStart=/bin/bash $SLIDESHOW_DIR/start_slideshow.sh
 Environment="DISPLAY=:0"
 Environment="XDG_RUNTIME_DIR=/run/user/1000"
