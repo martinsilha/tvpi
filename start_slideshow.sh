@@ -1,4 +1,6 @@
 #!/bin/bash
+source "$(dirname "$0")/config.sh"
+source "$(dirname "$0")/lib.sh"
 
 LOG_FILE="/var/log/slideshow.log"
 
