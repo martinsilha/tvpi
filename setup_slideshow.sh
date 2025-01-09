@@ -26,7 +26,8 @@ Description=Slideshow Service
 After=display-manager.service
 
 [Service]
-User=root
+User=$SLIDESHOW_USER
+Group=video
 ExecStart=/usr/bin/fbi -d /dev/fb0 -T 1 -a -t $SLIDESHOW_DELAY --noverbose --readahead $IMAGE_DIR/*.{jpg,jpeg,webp}
 Restart=always
 RestartSec=10
