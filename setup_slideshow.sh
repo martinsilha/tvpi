@@ -28,7 +28,7 @@ After=display-manager.service
 [Service]
 User=root
 Group=root
-ExecStart=/usr/bin/fbi -d /dev/fb0 -T 1 -a -t $SLIDESHOW_DELAY --noverbose --readahead $IMAGE_DIR/*.{jpg,jpeg,webp}
+ExecStart=/usr/bin/fbi -d /dev/fb0 -T 1 -a -t $SLIDESHOW_DELAY --noverbose --readahead $IMAGE_DIR/*.{jpg,jpeg,webp} > /tmp/slideshow.log 2>&1
 Restart=always
 RestartSec=10
 
