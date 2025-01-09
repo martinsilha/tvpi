@@ -15,9 +15,9 @@ sudo chown -R $SLIDESHOW_USER:$SLIDESHOW_USER "$SLIDESHOW_DIR"
 
 console_info "Setting up image directory..."
 sudo mkdir -p "$IMAGE_DIR"
-curl -o "$IMAGE_DIR/1.jpg" "https://placehold.co/6000x4000/EEE/31343C.jpg"
-curl -o "$IMAGE_DIR/2.jpg" "https://placehold.co/5000x4000/EEE/31343C.jpg"
-curl -o "$IMAGE_DIR/3.jpg" "https://placehold.co/4000x4000/EEE/31343C.jpg"
+curl -o "$IMAGE_DIR/1.jpg" "https://placehold.co/4000x4000/EEE/31343C.jpg"
+curl -o "$IMAGE_DIR/2.jpg" "https://placehold.co/3000x3000/EEE/31343C.jpg"
+curl -o "$IMAGE_DIR/3.jpg" "https://placehold.co/2000x2000/EEE/31343C.jpg"
 
 console_info "Creating systemd service for slideshow..."
 sudo bash -c "cat > /etc/systemd/system/slideshow.service <<EOF
@@ -26,8 +26,8 @@ Description=Slideshow Service
 After=display-manager.service
 
 [Service]
+User=root
 ExecStart=/usr/bin/fbi -d /dev/fb0 -T 1 -a -t $SLIDESHOW_DELAY --noverbose --readahead $IMAGE_DIR/*.{jpg,jpeg,webp}
-User=$SLIDESHOW_USER
 Restart=always
 RestartSec=10
 
